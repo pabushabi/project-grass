@@ -13,7 +13,7 @@ const fs = require('fs');
 let win;
 
 // Scheme must be registered before the app is ready
-protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true, standard: true } }])
+protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true, standard: true } }]);
 
 function createWindow () {
   // Create the browser window.
@@ -44,11 +44,17 @@ function createWindow () {
   if (!fs.existsSync(generatedDir)){
     fs.mkdirSync(generatedDir);
   }
+  // win.setOverlayIcon("fore.png", 'test');
 
   win.on('closed', () => {
     win = null
   })
 }
+
+const {ipcMain} = require('electron');
+ipcMain.on('set-progress', (e, arg) => {
+  win.setProgressBar(arg);
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -57,7 +63,7 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
-})
+});
 
 app.on('activate', () => {
   // On macOS it's common to re-create a window in the app when the
@@ -65,7 +71,7 @@ app.on('activate', () => {
   if (win === null) {
     createWindow()
   }
-})
+});
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -86,7 +92,7 @@ app.on('ready', async () => {
 
   }
   createWindow()
-})
+});
 
 // Exit cleanly on request from parent process in development mode.
 if (isDevelopment) {
