@@ -31,9 +31,9 @@ function createWindow () {
     win.loadURL('app://./index.html')
   }
 
-  let inputDir = './input';
+  let inputDir = './resources/input';
   let outputDir = './output';
-  let generatedDir = './generated';
+  let generatedDir = './resources/generated';
 
   if (!fs.existsSync(inputDir)){
     fs.mkdirSync(inputDir);

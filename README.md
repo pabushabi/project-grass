@@ -6,6 +6,8 @@ It`s 2D game constructor built with Vue and Electron
 ```
 npm install
 ```
+
+Before running/building app you must place golang compiler in mingo/ directory
 ### Run app
 ```
 electron:serve
