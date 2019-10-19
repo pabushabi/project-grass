@@ -1,9 +1,8 @@
 {
-  "name": "project-grass",
-  "version": "0.0.2",
+  "name": "game-constructor",
+  "version": "0.0.3",
   "description": "2d game constructor",
   "author": "pabushabi",
-  "license": "ISC",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -15,7 +14,10 @@
   },
   "main": "background.js",
   "dependencies": {
-    "vue": "^2.6.10"
+    "@mdi/font": "^3.6.95",
+    "roboto-fontface": "*",
+    "vue": "^2.6.10",
+    "vuetify": "^2.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-unit-mocha": "^3.11.0",
@@ -24,6 +26,8 @@
     "chai": "^4.2.0",
     "electron": "^6.0.12",
     "vue-cli-plugin-electron-builder": "^1.4.0",
+    "vue-cli-plugin-vuetify": "^1.0.1",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "license": "ISC"
 }
